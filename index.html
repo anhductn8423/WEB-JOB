@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang tuyển dụng</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#gioithieu">Giới thiệu</a></li>
+                <li><a href="nhatuyendung/ntd.html">Nhà tuyển dụng</a></li>
+                <li><a href="#CV">CV</a></li>
+                
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button><a href="">Đăng Nhập</a></button>
+            <button><a href="dangky.html">Đăng ký</a></button>
+            
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Tìm kiếm công việc...">
+            <button id="search-btn">Tìm kiếm</button>
+        </div>
+        <div id="search-results"></div>
+    </header>
+    <script>
+        const searchBtn = document.getElementById('search-btn');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+    
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value;
+    
+            // Giả định rằng bạn có một danh sách công việc để tìm kiếm
+            const jobs = [
+                { title: 'Chuyên Viên Nhân Sự', location: 'Hà Nội' },
+                { title: 'Giao Dịch Viên', location: 'Bắc Ninh' },
+                // Thêm nhiều công việc khác
+            ];
+    
+            // Tìm kiếm trong danh sách
+            const results = jobs.filter(job => job.title.toLowerCase().includes(query.toLowerCase()));
+    
+            // Hiển thị kết quả
+            searchResults.innerHTML = ''; // Xóa kết quả cũ
+            if (results.length > 0) {
+                results.forEach(job => {
+                    const jobDiv = document.createElement('div');
+                    jobDiv.textContent = `${job.title} - ${job.location}`;
+                    searchResults.appendChild(jobDiv);
+                });
+            } else {
+                searchResults.textContent = 'Không tìm thấy kết quả nào.';
+            }
+        });
+    </script>
+    <main>
+        <section class="banner">
+            <h1>Đăng tin tuyển dụng, tìm kiếm ứng viên hiệu quả</h1>
+            <p>Đăng tin tuyển dụng miễn phí, đơn giản và nhanh chóng</p>
+            <button><a href="">Tư vấn tuyển dụng</a></button>
+            <button>Đăng tin miễn phí</button>
+        </section>
+        <section class="features">
+            <div>
+                <h2>Đăng tin nhanh chóng</h2>
+                <p>Đăng tin tuyển dụng của bạn trong vài phút và nhận phản hồi nhanh.</p>
+            </div>
+            <div>
+                <h2>Ứng viên đa dạng</h2>
+                <p>Truy cập vào nguồn ứng viên lớn từ nhiều lĩnh vực.</p>
+            </div>
+            <div>
+                <h2>Kết nối thông minh</h2>
+                <p>AI giúp bạn tìm kiếm ứng viên phù hợp nhất.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="container-lg"></div>
+       
+        <div class="content my-4">
+          <div class="posts px-3 py-3">
+            <div class="posts-count">
+              <h3 class="posts-number">
+                <span>100</span>
+                Việc làm IT
+              </h3>
+            </div>
+            <div class="row g-2">
+              <div class="col-sm-12 col-md-12 col-xl-6">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/abbank.png" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info px-sm-2">
+                    <h2 class="posts-item-info__title">Backend developer</h2>
+                    <p class="posts-item-info__company">ABBank</p>
+                    <div class="posts-item-info__address">
+                      <p>
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      Hà Nội</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <p> 
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span>JavaScript</span>
+                      <span>PHP</span>
+                      <span>Java</span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+  
+              <div class="col-sm-12 col-md-12 col-xl-6">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/tnt.jpg" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info px-sm-2">
+                    <h2 class="posts-item-info__title">Game Developer</h2>
+                    <p class="posts-item-info__company">TNT MEDIA & ISOCIA</p>
+                    <div class="posts-item-info__address">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <p>Đà Nẵng</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      <p>1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="row g-2">
+              <div class="col-sm-12 col-md-12 col-xl-6 ">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/tnt.jpg" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info">
+                    <h2 class="posts-item-info__title">Frontend Dev </h2>
+                    <p class="posts-item-info__company"></p>
+                    <div class="posts-item-info__address">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <p> Đà Nẵng</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      <p>1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span>JavaScript</span>
+                      <span>PHP</span>
+                      <span>Java</span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+  
+              <div class="col-sm-12 col-md-12 col-xl-6">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/mkt.webp" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info">
+                    <h2 class="posts-item-info__title">Marketing ads</h2>
+                    <p class="posts-item-info__company"></p>
+                    <div class="posts-item-info__address">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <p>Thành Phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      <p>1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="row g-2">
+              <div class="col-sm-12 col-md-12 col-xl-6 ">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/cmc.webp" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info">
+                    <h2 class="posts-item-info__title">Kỹ sư phát triển phần mềm</h2>
+                    <p class="posts-item-info__company">Trường đại học CMC</p>
+                    <div class="posts-item-info__address">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <p>Hà Nội</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      <p>1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+  
+              <div class="col-sm-12 col-md-12 col-xl-6">
+                <a class="posts-item py-3 px-3" href="/">
+                  <div class="posts-item-img">
+                    <img src="img/lt.webp" alt="logo-company">
+                  </div>
+  
+                  <div class="posts-item-info">
+                    <h2 class="posts-item-info__title">.NET DEVELOPER</h2>
+                    <p class="posts-item-info__company">CÔNG TY TNHH PHẦN MỀM ALLIANCE</p>
+                    <div class="posts-item-info__address">
+                      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                      <p>Thành phố Hồ Chí Minh</p>
+                    </div>
+                    <div class="posts-item-info__salary">
+                      <i class="fa-solid fa-money-bill-wave" aria-hidden="true"></i>
+                      <p>1,000 - 2,000</p>
+                    </div>
+                    <div class="posts-item-info__kills">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+  
+                  <div class="posts-item-timer">
+                    <p>4 giờ trước</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+
+    <footer>
+        <p>© 2024 WEBJOB nơi tìm kiếm công việc hàng đầu</p>
+    </footer>
+</body>
+</html>
